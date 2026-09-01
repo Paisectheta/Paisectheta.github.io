@@ -11,8 +11,8 @@ sidebar_sections:
 ## All posts
 
 <div class="content-list">
-  {% assign blog_items = site.posts | where_exp: "item", "item.content_type == nil or item.content_type == 'blog'" %}
-  {% for item in blog_items %}
+  {% for item in site.posts %}
+  {% if item.content_type == nil or item.content_type == 'blog' %}
   <article class="content-list-item">
     <p class="post-meta">Blog{% if item.categories %} · {{ item.categories | join: ', ' }}{% endif %}</p>
     <h2><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h2>
@@ -20,5 +20,6 @@ sidebar_sections:
     <p>{{ item.excerpt | strip_html | truncatewords: 28 }}</p>
     {% endif %}
   </article>
+  {% endif %}
   {% endfor %}
 </div>
