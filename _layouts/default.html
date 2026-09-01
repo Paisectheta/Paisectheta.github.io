@@ -98,17 +98,14 @@
 
         <section class="rail-card">
           <h2>Quotes</h2>
-          {% assign sidebar_quotes = site.data.sidebar_quotes %}
-          {% if sidebar_quotes and sidebar_quotes.size > 0 %}
-          {% assign quote_index = site.time | date: "%s" | modulo: sidebar_quotes.size %}
-          {% assign quote = sidebar_quotes[quote_index] %}
-          {% else %}
           {% assign quote = site.sidebar_quote %}
-          {% endif %}
-          <blockquote>
+          <blockquote data-sidebar-quote>
             <p>{{ quote.text }}</p>
             <footer>{{ quote.source }}</footer>
           </blockquote>
+          <script type="application/json" data-sidebar-quotes>
+            {{ site.data.sidebar_quotes | jsonify }}
+          </script>
         </section>
 
         <section class="rail-card">
@@ -131,5 +128,6 @@
     </footer>
   </div>
   <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/sidebar-quotes.js' | relative_url }}" defer></script>
 </body>
 </html>
