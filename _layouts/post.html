@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<article class="post rich-content">
+  <p class="post-meta">
+    {{ page.content_type | default: 'blog' | capitalize }}
+    {% if page.categories %}
+    · {{ page.categories | join: ', ' }}
+    {% endif %}
+  </p>
+  <p class="post-meta">{{ page.date | date: "%d %B %Y" }}</p>
+  {{ content }}
+</article>

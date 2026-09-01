@@ -1,0 +1,19 @@
+{% assign items = include.items | default: site.posts %}
+{% assign content_type = include.content_type | default: 'blog' %}
+
+<div class="content-list">
+  {% for item in items %}
+  <article class="content-list-item">
+    <p class="post-meta">
+      {{ item.content_type | default: content_type | capitalize }}
+      {% if item.categories %}
+      · {{ item.categories | join: ', ' }}
+      {% endif %}
+    </p>
+    <h2><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h2>
+    {% if item.excerpt %}
+    <p>{{ item.excerpt | strip_html | truncatewords: 28 }}</p>
+    {% endif %}
+  </article>
+  {% endfor %}
+</div>

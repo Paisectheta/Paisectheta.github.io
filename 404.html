@@ -1,25 +1,27 @@
 ---
+layout: default
+title: Err 404
 permalink: /404.html
-layout: page
+<!-- intro: The page you wanted is not here, but the site map still is. -->
+sidebar_sections:
+  - label: Go home
+    url: "/"
+  - label: About
+    url: "/about/"
+  - label: Projects
+    url: "/projects/"
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+<h2>You are lost</h2>
 
-<div class="container">
-  <h1>404</h1>
+<p>You are poking around where you shouldn't be *angry* </p>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<h2>Try this instead</h2>
+
+<ul>
+  <li>Return to the <a href="{{ '/' | relative_url }}">Main Page</a> for the full site map.</li>
+  <li>Browse <a href="{{ '/about/' | relative_url }}">About</a> if you want the quick intro.</li>
+  <li>Open <a href="{{ '/projects/' | relative_url }}">Projects</a> if you were trying to find the interesting part.</li>
+</ul>
+
+<p>Don't worry, I'll fix this up as soon as possible. Probably a broken link or smtg.</p>

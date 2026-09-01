@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}{% if page.title %} — {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+    <script>
+      (function () {
+        var storedTheme = null;
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        try {
+          storedTheme = window.localStorage.getItem('theme');
+        } catch (error) {
+          storedTheme = null;
+        }
+        var theme = storedTheme || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      }());
+    </script>
+</head>
+<body class="site-body">
+  <div class="site-frame">
+    <header class="topbar">
+      <div class="brand-block">
+        <p class="brand-kicker">Abhinav Pai</p>
+        <h1 class="brand-title"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+        <p class="brand-tagline">{{ site.tagline }}</p>
+      </div>
+      <nav class="topnav" aria-label="Primary navigation">
+        <a href="{{ '/' | relative_url }}">Main Page</a>
+        <a href="{{ '/projects/' | relative_url }}">Projects</a>
+        <a href="{{ '/blog/' | relative_url }}">Blog</a>
+        <a href="{{ '/takes/' | relative_url }}">Takes</a>
+        <a href="{{ '/about/' | relative_url }}">About</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle dark mode">
+        <span class="theme-toggle-label" data-theme-label>Dark mode</span>
+      </button>
+    </header>
+
+    <div class="page-shell">
+      <aside class="rail rail-left" aria-label="On this page">
+        <section class="rail-card">
+          <h2>On this page</h2>
+          {% if page.sidebar_sections %}
+          <ul class="rail-list">
+            {% for item in page.sidebar_sections %}
+            <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+            {% endfor %}
+          </ul>
+          {% else %}
+          <p class="rail-note">This page is short, so the site map does most of the work.</p>
+          {% endif %}
+        </section>
+
+        <section class="rail-card">
+          <h2>Site map</h2>
+          <ul class="rail-list">
+            <li><a href="{{ '/' | relative_url }}">Main Page</a></li>
+            <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
+            <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+            <li><a href="{{ '/takes/' | relative_url }}">Takes</a></li>
+            <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+          </ul>
+        </section>
+      </aside>
+
+      <main class="content-column">
+        <section class="page-banner">
+          <p class="page-kicker">Home of all things paisec</p>
+          <h1>{{ page.title }}</h1>
+          {% if page.intro %}
+          <p class="page-intro">{{ page.intro }}</p>
+          {% endif %}
+        </section>
+
+        <div class="content-card">
+          {{ content }}
+        </div>
+      </main>
+
+      <aside class="rail rail-right" aria-label="Sidebar">
+        <section class="rail-card">
+          <h2>Updates</h2>
+          <ul class="rail-list">
+            {% for item in site.data.sidebar_updates %}
+            <li>
+              {% if item.link %}
+              <a href="{{ item.link | relative_url }}">{{ item.text }}</a>
+              {% else %}
+              {{ item.text }}
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+        </section>
+
+        <section class="rail-card">
+          <h2>Quotes</h2>
+          {% assign sidebar_quotes = site.data.sidebar_quotes %}
+          {% if sidebar_quotes and sidebar_quotes.size > 0 %}
+          {% assign quote_index = site.time | date: "%s" | modulo: sidebar_quotes.size %}
+          {% assign quote = sidebar_quotes[quote_index] %}
+          {% else %}
+          {% assign quote = site.sidebar_quote %}
+          {% endif %}
+          <blockquote>
+            <p>{{ quote.text }}</p>
+            <footer>{{ quote.source }}</footer>
+          </blockquote>
+        </section>
+
+        <section class="rail-card">
+          <h2>Curated</h2>
+          <ul class="rail-list rail-links">
+            {% for item in site.data.curated_links %}
+            <li>
+              <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
+              <span>{{ item.note }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <footer class="page-footer">
+      Last updated {{ page.last_modified_at | default: site.time | date: "%d %B %Y" }}.
+      This is the end of line, program.
+    </footer>
+  </div>
+  <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}" defer></script>
+</body>
+</html>
