@@ -2,7 +2,7 @@
 layout: page
 title: Projects
 permalink: /projects/
-intro: Standalone project pages live here. For project updates, use regular posts in Blog.
+intro: This is where all that I make is documented.
 sidebar_sections:
   - label: Standalone project pages
     url: "#standalone-project-pages"

@@ -185,6 +185,30 @@ html[data-theme="dark"] .post-meta {
   background: var(--accent-soft);
 }
 
+.theme-warning {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  max-width: min(360px, calc(100vw - 32px));
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 8px 20px var(--shadow);
+  font: 700 0.75rem/1.5 Verdana, Arial, sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.theme-warning.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .page-shell {
   display: grid;
   grid-template-columns: 190px minmax(0, 1fr) 270px;
