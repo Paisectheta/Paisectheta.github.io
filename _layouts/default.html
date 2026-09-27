@@ -64,6 +64,19 @@
             <li><a href="{{ '/about/' | relative_url }}">About</a></li>
           </ul>
         </section>
+
+        <section class="rail-card listening-card">
+          <h2>Listening</h2>
+          <p class="rail-note listening-intro">A small rotation, updated when the mood changes.</p>
+          <ul class="rail-list rail-links music-list">
+            {% for item in site.data.music %}
+            <li>
+              <a href="{{ item.url }}">{{ item.title }}</a>
+              <span>{{ item.artist }}{% if item.note %} · {{ item.note }}{% endif %}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </section>
       </aside>
 
       <main class="content-column">
@@ -119,6 +132,7 @@
             {% endfor %}
           </ul>
         </section>
+
       </aside>
     </div>
 

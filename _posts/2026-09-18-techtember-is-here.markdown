@@ -27,9 +27,9 @@ Obviously, back then I started off asking my dad to buy me books (there was also
 
 But then came the era of discovering archive.org and a few other shady sites (wink). I went from reading Geronimo Stilton to The Martian to Dune in the span of a few years. The Kindle stuck with me through all of it - through COVID, through college. It's kind of insane how it's stood the test of time.
 
-And I think that's what sets it apart. It just... did its thing. It's a companion. I still use it today. I've done some things to it since (probably a separate projects post on the way for that one), but at its core, it's still just doing the one job it was built for — being an ebook reader.
+And I think that's what sets it apart. It just... did its thing. It's a companion. I still use it today. I've done some things to it since (probably a separate projects post on the way for that one), but at its core, it's still just doing the one job it was built for - being an ebook reader.
 
-The thing about the Kindle is that it's totally distraction-free. No notifications. No noise. Nothing. Just pure book reading. And the e-ink display — oh, how much I love that!!!
+The thing about the Kindle is that it's totally distraction-free. No notifications. No noise. Nothing. Just pure book reading. And the e-ink display - oh, how much I love that!!!
 
 So why does it even matter in 2026? Are Kindles dying? I don't see people buying them much anymore. I think there's just a lot more competition now. Between the advancement of e-ink tech (stuff like the Boox Note pushing what these screens can do) and Kindle's own move into color displays, I feel like something's been lost - that clean, nostalgic feeling these devices used to have.
 
