@@ -13,7 +13,7 @@ sidebar_sections:
 ---
 
 ## Bio
-I loveee building things. I fix things. I also love to make functional softwares. I love researching UI/UX designing philosophies (I cannot design, creative compass is shit).
+I loveee building things. I fix things. I also love to make functional software. I love researching UI/UX designing philosophies (I cannot design, creative compass is shit).
 
 I am a hardcore aviation and marine enthusiast with a particular incline towards defence tech. Automobile engineering also sits somewhere up there. (I love F1 and WEC, Forza Ferrari!!!).
 
